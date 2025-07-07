@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Portfólio</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #002f6c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  main {
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  main ul {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  form label {
+    align-self: flex-start;
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 5px;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  footer {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>Rodrigo Pettenon</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="loadContent('sobre')">Sobre mim</a></li>
+        <li><a href="#" onclick="loadContent('formacao')">Formação</a></li>
+        <li><a href="#" onclick="loadContent('portfolio')">Portfólio</a></li>
+        <li><a href="#" onclick="loadContent('contato')">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <!-- Conteúdo será carregado aqui -->
+  </main>
+
+  <footer>
+    <p>2025 Rodrigo Pettenon</p>
+  </footer>
+
+  <script>
+ function loadContent(section) {
+  const content = document.getElementById('content');
+
+  if (section === 'sobre') {
+    content.innerHTML = `
+      <h2>Sobre mim</h2>
+      <p>Prazer! Me chamo Rodrigo, sou estudante de Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento back-end.</p>
+      <p>Tenho boa base em lógica, pensamento estruturado e rápida capacidade de aprendizado.</p>
+      <p>Atuo no desenvolvimento de APIs RESTful utilizando Java, Spring Boot e MySQL.</p>
+      <p>Minha vivência como autônomo fortaleceu habilidades como organização, trabalho em equipe, foco em resultados e resolução de problemas.</p>
+    `;
+  } else if (section === 'formacao') {
+    content.innerHTML = `
+      <h2>Formação</h2>
+      <p><strong>Curso superior:</strong> Análise e Desenvolvimento de Sistemas (UNINTER)</p>
+      <p><strong>Idiomas:</strong> Português (nativo), Inglês (intermediário)</p>
+
+      <h3>Formação Complementar</h3>
+      <p>Curso em Vídeo – Prof. Gustavo Guanabara</p>
+      <ul style="list-style-position: inside;">
+        <li>Banco de Dados com MySQL – 2025</li>
+        <li>Java Básico e Programação Orientada a Objetos – 2024</li>
+        <li>Lógica de Programação – 2023</li>
+      </ul>
+
+      <h3>Certificações</h3>
+      <ul style="list-style-position: inside;">
+        <li>Banco de Dados e POO – Fundação Bradesco – 2025</li>
+        <li>Java (Basic), SQL (Basic), REST API – HackerRank – 2025</li>
+      </ul>
+    `;
+  } else if (section === 'portfolio') {
+    content.innerHTML = `
+      <h2>Portfólio</h2>
+      <p>Projetos em que atuei recentemente:</p>
+      <ul style="list-style-position: inside;">
+        <li><a href="https://github.com/rodrigopettenon/orderflow-api" target="_blank">OrderFlow API – Java, Spring Boot</a></li>
+      </ul>
+    `;
+  } else if (section === 'contato') {
+    content.innerHTML = `
+      <h2>Contato</h2>
+      <p>Preencha o formulário abaixo para entrar em contato comigo:</p>
+      <form style="display: inline-block; text-align: left;">
+        <label>Nome:</label><br>
+        <input type="text" name="nome"><br><br>
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+        <label>Mensagem:</label><br>
+        <textarea name="mensagem"></textarea><br><br>
+        <button type="submit">Enviar</button>
+      </form>
+    `;
+  }
+}
+   // Carrega a seção inicial (opcional)
+    window.onload = function() {
+      loadContent('sobre');
+    }
+  </script>
+</body>
+</html>
